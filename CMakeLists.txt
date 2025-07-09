@@ -20,7 +20,24 @@ set(CONFIG_LV_USE_THORVG_INTERNAL
 add_subdirectory(lvgl)
 
 target_link_libraries(lvgl PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
-add_executable(lvgl_hello_world src/main.c)
+
+add_executable(lvgl_hello_world 
+src/main.c
+src/scythe_demo/lv_scythe.h
+src/scythe_demo/lv_scythe_main_page.c
+src/scythe_demo/lv_scythe.c
+src/scythe_demo/lv_scythe_main_page.h
+src/scythe_demo/lv_scythe_air.c
+src/scythe_demo/lv_scythe_air.h
+src/scythe_demo/lv_scythe_callbacks.c
+src/scythe_demo/lv_scythe_callbacks.h
+src/scythe_demo/lv_scythe_humidity.c
+src/scythe_demo/lv_scythe_humidity.h
+src/scythe_demo/lv_scythe_performance_page.c
+src/scythe_demo/lv_scythe_performance_page.h
+src/scythe_demo/lv_scythe_thermostat.c
+src/scythe_demo/lv_scythe_thermostat.h)
+
 target_include_directories(lvgl_hello_world PRIVATE lvgl ${SDL2_INCLUDE_DIRS}
                                                     ${SDL2_IMAGE_INCLUDE_DIRS})
 target_link_libraries(lvgl_hello_world PRIVATE lvgl)
