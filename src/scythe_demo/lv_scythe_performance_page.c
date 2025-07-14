@@ -59,19 +59,19 @@ void lv_create_performance_page(lv_obj_t *parent)
             lv_obj_set_style_radius(rect, 4, 0);
 
             // Add power icon centered in the rectangle
-            lv_obj_t *icon = lv_image_create(rect);
-            lv_image_set_src(icon, &power);
-            lv_obj_center(icon);
+            // lv_obj_t *icon = lv_image_create(rect); // After this line application freezes.
+            // lv_image_set_src(icon, &power);
+            // lv_obj_center(icon);
 
             // Animate icon rotation clockwise
-            lv_anim_t a;
-            lv_anim_init(&a);
-            lv_anim_set_var(&a, icon);
-            lv_anim_set_exec_cb(&a, set_angle);
-            lv_anim_set_values(&a, 0, 3600);
-            lv_anim_set_time(&a, 5000);
-            lv_anim_set_repeat_count(&a, LV_ANIM_REPEAT_INFINITE);
-            lv_anim_start(&a);
+            // lv_anim_t a;
+            // lv_anim_init(&a);
+            // lv_anim_set_var(&a, icon);
+            // lv_anim_set_exec_cb(&a, set_angle);
+            // lv_anim_set_values(&a, 0, 3600);
+            // lv_anim_set_time(&a, 5000);
+            // lv_anim_set_repeat_count(&a, LV_ANIM_REPEAT_INFINITE);
+            // lv_anim_start(&a);
         }
     }
 }

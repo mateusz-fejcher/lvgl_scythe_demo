@@ -13,15 +13,15 @@ lv_obj_t* lv_scythe_create_thermostat_slider(lv_obj_t* parent) {
     lv_slider_set_range(slider, 0, 30);
     lv_slider_set_value(slider, 13, LV_ANIM_OFF);
     lv_obj_set_style_bg_color(slider, lv_color_hex(0x444444), LV_PART_MAIN);
-    lv_obj_set_style_bg_opa(slider, LV_OPA_COVER, LV_PART_MAIN);
-    lv_obj_set_style_radius(slider, 80, LV_PART_MAIN);
+    lv_obj_set_style_opa(slider, LV_OPA_COVER, LV_PART_MAIN);
+    // lv_obj_set_style_radius(slider, 80, LV_PART_MAIN); Slider Main part is not colored and after this line application freezes.
     lv_obj_set_style_bg_color(slider, lv_color_hex(0xFF0000), LV_PART_INDICATOR);
     lv_obj_set_style_bg_opa(slider, LV_OPA_COVER, LV_PART_INDICATOR);
     lv_obj_set_style_radius(slider, 10, LV_PART_INDICATOR);
 
     lv_obj_t *slider_val_label = lv_label_create(g_side_panel);
     lv_label_set_text_fmt(slider_val_label, "%d°C", 13);
-    // lv_obj_set_style_text_font(slider_val_label, &lv_font_montserrat_28, 0); 
+    lv_obj_set_style_text_font(slider_val_label, &lv_font_montserrat_28, 0);     
     lv_obj_set_style_text_color(slider_val_label, lv_color_white(), 0);           
     lv_obj_align(slider_val_label, LV_ALIGN_CENTER, 0, 0);
     lv_obj_set_user_data(slider, slider_val_label);

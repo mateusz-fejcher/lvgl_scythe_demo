@@ -23,6 +23,7 @@ target_link_libraries(lvgl PRIVATE ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
 
 add_executable(lvgl_hello_world 
 src/main.c
+src/mouse_cursor_icon.c
 src/scythe_demo/lv_scythe.h
 src/scythe_demo/lv_scythe_main_page.c
 src/scythe_demo/lv_scythe.c
